@@ -1,0 +1,111 @@
+---
+title: "&#32;"
+output:
+  html_document:
+    css: WWW/main.css
+---
+```{r, echo=FALSE,include=FALSE}
+scripts_list <- list.files("scripts",full.names = TRUE)
+
+sapply(scripts_list, function(dir) source(dir))
+```
+
+```{r, echo=FALSE,include=FALSE}
+details <- my_details()
+```
+
+
+
+
+<div>
+  <div class = "highlights">
+## `r details$Summary$Name` 
+#### `r details$Summary$Role` 
+
+`r details$Summary$Description`
+
+### Experience 
+
+```{r, echo=FALSE,results='asis'}
+for(row in 1:nrow(details$`Relevant Experience`)) {
+  detail <- paste0("#### ",details$`Relevant Experience`$Title[row],"\n\n",
+                 "**Brand: **",details$`Relevant Experience`$Brand[row],"\n\n",
+                 "**Company: **",details$`Relevant Experience`$Company[row],"\n\n",
+                 "**Dates: **",details$`Relevant Experience`$Dates[row],"\n",
+                  gsub("*","\n* ",details$`Relevant Experience`$Responsibilities[row],fixed =TRUE),"\n\n")
+  cat(detail)
+}
+```
+
+
+##### Other Experience
+
+```{r, echo=FALSE,results='asis'}
+for(row in 1:nrow(details$`Other Experience`)) {
+  detail <- paste0("**",details$`Other Experience`$Title[row],"**","\n\n",
+                 details$`Other Experience`$Company[row],"(",details$`Other Experience`$Dates[row],")\n\n")
+  cat(detail)
+}
+```
+
+
+### Certificates 
+
+```{r, echo=FALSE,results='asis'}
+for(row in 1:nrow(details$`Other Experience`)) {
+  detail <- paste0("**",details$Certificates$Certificate[row],"** \n\n")
+  cat(detail)
+}
+```
+
+
+### Trainings/Seminar 
+
+```{r, echo=FALSE,results='asis'}
+for(row in 1:nrow(details$Training)) {
+  detail <- paste0("**",details$Training$Seminar[row],"** (",details$Training$Dates[row],")\n\n")
+  cat(detail)
+}
+```
+
+  </div>
+  
+  <div class="image-header">
+  <img src="profile/profile_pic.jpg" class = "image" alt="Ako to">
+  
+  </div>
+  
+  <div class = "highlights2">
+
+```{r, echo=FALSE,results='asis'}
+for(row in 1:nrow(details$`Contact Info`)) {
+  contact <- paste0("**",details$`Contact Info`$Contact[row],"**: ",details$`Contact Info`$Description[row],"\n\n")
+  cat(contact)
+}
+```
+
+### Skills 
+
+```{r, echo=FALSE,results='asis'}
+for(row in 1:nrow(details$Skills)) {
+  detail <- paste0("**",gsub(":","**:\n\n",details$Skills$Skills[row]),"\n\n")
+  cat(detail)
+}
+```
+
+### Education 
+
+```{r, echo=FALSE,results='asis'}
+for(row in 1:nrow(details$Education)){
+  education <- paste0("**",details$Education$Degree[row],"** \n\n",
+      details$Education$Institution[row],"\n\n",
+      details$Education$Dates[row],"\n\n",
+      "**Research:**",details$Education$Research[row],"\n\n")
+  cat(education)
+}
+
+```
+  </div>
+  
+  
+</div>
