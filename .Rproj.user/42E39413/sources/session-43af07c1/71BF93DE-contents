@@ -1,0 +1,43 @@
+.highlights {
+  float:left;
+  width: 60%;
+}
+.image-header {
+  float:right;
+  width: 36%;
+  align-content: center;
+  align-self: center;
+  right:20px;
+}
+.highlights2 {
+  position:relative;
+  float:right;
+  width: 36%;
+  background-color: "blue";
+  padding-top: 10px;
+}
+
+.image {
+  border-radius: 50%;
+  width: 230px; /* Adjust the width as needed */
+  height: auto; /* Maintain aspect ratio */
+}
+
+h3::after {
+    content: "";
+    display: block;
+    width: 100%; /* Adjust the width as needed */
+    height: 0.3px; /* Adjust the thickness of the underline */
+    background: #000; /* Change the color of the underline */
+}
+p {
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+}
+
+/* Remove extra spacing between lines */
+body {
+    line-height: 1.5; /* Adjust as needed */
+    font-size: 12px;
+}
