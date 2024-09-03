@@ -1,35 +1,83 @@
-.highlights {
+
+.container {
+width: 8.5in;
+padding: 0;
+margin:0;
+background-color: #c4c5c9 !important;
+}
+.top-header{
+  height: 100px;
+  background-color: #162D5D !important;
+}
+.header {
   float:left;
-  width: 60%;
+  width: 70%;
+  padding:0px;
+  margin: 0px;
+  color: #ffffff !important;
 }
+
+.image-container {
+  display :flex;
+  float:right;
+  width: 28%;
+  padding:0px;
+  margin: 0px;
+}
+
+
+.left {
+  float:left;
+  width: 70%;
+  padding:0px;
+  margin: 0px;
+  background-color: #f5f5f5!important;
+}
+
+
+.right {
+  float:right;
+  width: 28%;
+  padding:0px;
+  margin: 0px;
+}
+
 .image-header {
-  float:right;
-  width: 36%;
-  align-content: center;
-  align-self: center;
-  right:20px;
-}
-.highlights2 {
-  position:relative;
-  float:right;
-  width: 36%;
-  background-color: "blue";
-  padding-top: 10px;
+  display:flex;
+  width: 100%; /* Adjust the width as needed */
+  height: 200px; 
+  align-items: center;
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  padding-bottom:0;
 }
 
 .image {
   border-radius: 50%;
-  width: 230px; /* Adjust the width as needed */
-  height: auto; /* Maintain aspect ratio */
+  width: 100%; /* Adjust the width as needed */
+  height: 200px; /* Maintain aspect ratio */
+  background-color: "white";
 }
 
 h3::after {
     content: "";
     display: block;
-    width: 100%; /* Adjust the width as needed */
+    width: 95%; /* Adjust the width as needed */
     height: 0.3px; /* Adjust the thickness of the underline */
-    background: #000; /* Change the color of the underline */
+    background: #162D5D!important; /* Change the color of the underline */
 }
+
+h3{
+  color:#162D5D!important;
+  font-family: bold;
+  line-height: 1.2;
+}
+
+h4{
+  font-family: bold;
+  line-height: 12px;
+}
+
 p {
     margin: 0;
     padding: 0;
@@ -38,6 +86,103 @@ p {
 
 /* Remove extra spacing between lines */
 body {
-    line-height: 1.5; /* Adjust as needed */
+    line-height: 1.2; /* Adjust as needed */
     font-size: 12px;
+}
+
+@media print {
+  .container {
+      width: 100%;
+      padding: 0;
+      margin:0;
+      background-color: #c4c5c9 !important;
+    }
+    .top-header{
+      height: 100px;
+      background-color: #162D5D !important;
+    }
+    .header {
+      float:left;
+      width: 70%;
+      padding:0px;
+      margin: 0px;
+      color: #ffffff!important;
+    }
+    
+    .header h2,h4 {
+     color: #ffffff!important;
+    }
+    
+    .image-container {
+      display :flex;
+      float:right;
+      width: 28%;
+      padding:0px;
+      margin: 0px;
+    }
+    
+    
+    .left {
+      float:left;
+      width: 70%;
+      padding:0px;
+      margin: 0px;
+      background-color: #f5f5f5!important;
+    }
+    
+    
+    .right {
+      float:right;
+      width: 28%;
+      padding:0px;
+      margin: 0px;
+    }
+    
+    .image-header {
+      display:flex;
+      width: 100%; /* Adjust the width as needed */
+      height: 200px; 
+      align-items: center;
+      justify-content: center; /* Center content horizontally */
+      align-items: center; /* Center content vertically */
+      padding-bottom:0;
+    }
+    
+    .image {
+      border-radius: 50%;
+      width: 100%; /* Adjust the width as needed */
+      height: 200px; /* Maintain aspect ratio */
+      background-color: "white";
+    }
+    
+    h3::after {
+        content: "";
+        display: block;
+        width: 95%; /* Adjust the width as needed */
+        height: 0.3px; /* Adjust the thickness of the underline */
+        background: #162D5D!important; /* Change the color of the underline */
+    }
+    
+   h3{
+      color:#162D5D!important;
+      font-family: bold;
+      line-height: 1.2;
+    }
+    
+    h4{
+      font-family: bold;
+      line-height: 12px;
+    }
+    
+    p {
+        margin: 0;
+        padding: 0;
+        font-size: 12px;
+    }
+    
+    /* Remove extra spacing between lines */
+    body {
+        line-height: 1.2; /* Adjust as needed */
+        font-size: 12px;
+    }
 }

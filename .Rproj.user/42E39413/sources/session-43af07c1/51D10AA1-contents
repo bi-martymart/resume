@@ -13,19 +13,28 @@ sapply(scripts_list, function(dir) source(dir))
 ```{r, echo=FALSE,include=FALSE}
 details <- my_details()
 ```
-
-
-
-
-<div>
-  <div class = "highlights">
+<div class = 'container'>
+<div class = 'top-header'>
+<div class = 'header'>
 ## `r details$Summary$Name` 
+
 #### `r details$Summary$Role` 
 
-`r details$Summary$Description`
+</div>
+<div class="image-container">
+<div class="image-header">
+<img src="profile/profile_pic.jpg" class = "image" alt="Ako to">
+</div>
+</div>
+</div>
+<div class = 'highlights-container'>
+<div class = 'left'>
+<div class = 'highlights'>
+
+\n\n `r details$Summary$Description`
+
 
 ### Experience 
-
 ```{r, echo=FALSE,results='asis'}
 for(row in 1:nrow(details$`Relevant Experience`)) {
   detail <- paste0("#### ",details$`Relevant Experience`$Title[row],"\n\n",
@@ -39,7 +48,6 @@ for(row in 1:nrow(details$`Relevant Experience`)) {
 
 
 ##### Other Experience
-
 ```{r, echo=FALSE,results='asis'}
 for(row in 1:nrow(details$`Other Experience`)) {
   detail <- paste0("**",details$`Other Experience`$Title[row],"**","\n\n",
@@ -50,7 +58,6 @@ for(row in 1:nrow(details$`Other Experience`)) {
 
 
 ### Certificates 
-
 ```{r, echo=FALSE,results='asis'}
 for(row in 1:nrow(details$`Other Experience`)) {
   detail <- paste0("**",details$Certificates$Certificate[row],"** \n\n")
@@ -60,22 +67,18 @@ for(row in 1:nrow(details$`Other Experience`)) {
 
 
 ### Trainings/Seminar 
-
 ```{r, echo=FALSE,results='asis'}
 for(row in 1:nrow(details$Training)) {
   detail <- paste0("**",details$Training$Seminar[row],"** (",details$Training$Dates[row],")\n\n")
   cat(detail)
 }
 ```
+</div>
 
-  </div>
-  
-  <div class="image-header">
-  <img src="profile/profile_pic.jpg" class = "image" alt="Ako to">
-  
-  </div>
-  
-  <div class = "highlights2">
+</div>
+
+<div class = 'right'>
+<div class = "highlights2">
 
 ```{r, echo=FALSE,results='asis'}
 for(row in 1:nrow(details$`Contact Info`)) {
@@ -85,7 +88,6 @@ for(row in 1:nrow(details$`Contact Info`)) {
 ```
 
 ### Skills 
-
 ```{r, echo=FALSE,results='asis'}
 for(row in 1:nrow(details$Skills)) {
   detail <- paste0("**",gsub(":","**:\n\n",details$Skills$Skills[row]),"\n\n")
@@ -94,7 +96,6 @@ for(row in 1:nrow(details$Skills)) {
 ```
 
 ### Education 
-
 ```{r, echo=FALSE,results='asis'}
 for(row in 1:nrow(details$Education)){
   education <- paste0("**",details$Education$Degree[row],"** \n\n",
@@ -105,7 +106,10 @@ for(row in 1:nrow(details$Education)){
 }
 
 ```
-  </div>
-  
-  
+</div>
+</div>
+
+
+
+
 </div>
