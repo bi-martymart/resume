@@ -13,12 +13,13 @@ sapply(scripts_list, function(dir) source(dir))
 ```{r, echo=FALSE,include=FALSE}
 details <- my_details()
 ```
+<html>
 <div class = 'container'>
 <div class = 'top-header'>
 <div class = 'header'>
 ## `r details$Summary$Name` 
 
-#### `r details$Summary$Role` 
+##### `r details$Summary$Role` 
 
 </div>
 <div class="image-container">
@@ -108,8 +109,5 @@ for(row in 1:nrow(details$Education)){
 ```
 </div>
 </div>
-
-
-
-
 </div>
+</html>
